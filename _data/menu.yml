@@ -1,0 +1,22 @@
+- title: 中文
+  href:
+- title: About
+  href: /about/
+- title: Tools
+  href: /tools/
+  children:
+    - title: Asm.js minifier
+      href: /tools/asm-js-minifier/
+    - title: Primality test
+      href: /tools/prime/
+    - title: Whiteboard
+      href: /tools/whiteboard/
+- title: Wbridge5
+  href: /wbridge5/
+  children:
+    - title: Partnership bidding
+      href: /wbridge5/partnership/
+    - title: Competitive bidding
+      href: /wbridge5/compentitive/
+    - title: Defensive bidding
+      href: /wbridge5/defensive/

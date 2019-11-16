@@ -1,0 +1,4 @@
+.brand > p,
+body > footer {
+	display: none;
+}

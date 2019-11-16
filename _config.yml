@@ -1,11 +1,14 @@
 plugins:
   - jekyll-paginate
 
-title: Sweet 16
-description:
-    <a href="https://wordpress.org/themes/twentysixteen/" rel="external">Wordpress 2016 theme</a>
-    in <a href="https://jekyllrb.com/" rel="external">Jekyll</a>
-
+title: Salander Keeps Learning !!!
+description: Forgive my poor English ~
 paginate: 10
 paginate_path: /page/:num/
 permalink: /:title/
+
+defaults:
+  - scope:
+        path: ""
+    values:
+        author: Salander
