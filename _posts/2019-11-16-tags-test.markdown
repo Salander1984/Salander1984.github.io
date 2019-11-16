@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "Tag Test"
+date:   2019-11-16 18:33:15 +0800
+categories: c1
+tags: tag1 tag2
+---
+All work and no play makes Jack a dull boy.
