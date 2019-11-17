@@ -1,8 +1,8 @@
 plugins:
   - jekyll-paginate
 
-title: Salander Keeps Learning !!!
-description: Forgive my poor English ~
+title: Salander Keeps Learning !
+description: Forgive my poor English
 paginate: 10
 paginate_path: /page/:num/
 permalink: /:title/
