@@ -11,7 +11,7 @@ I am Salander, a QA engineer works in [Dell Technologies][dell].
 I picked Salander as my English name from a movie: [The Girl With the Dragon Tattoo][tgwtdt] because I'm a such movie fan. 
 Besides, one of my dream was to be a brilliant hacker just like "THE SALANDER" in the movie.
 But truth is I am just a mediocre Java coder and someone like "THE SALANDER" never exists in reality as far as I know.
-Even so, I'm willing to learning not only Java programming skills but also information security knowledge.
+Even so, I'm willing to learn not only Java programming skills but also information security knowledge.
 
 [dell]:https://www.delltechnologies.com/en-us/index.htm
 [tgwtdt]:https://movie.douban.com/subject/4206357/
