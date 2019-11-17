@@ -5,7 +5,7 @@
 			{% if post.ext == ".md" and post.content contains "<h2" %}
 				{{ post.content | replace_first: "<h2", "<section><h2" }}</section>
 			{% else %}
-				{{ post.content }}
+				{{ post.excerpt }}
 			{% endif %}
 		</div>
 		<footer>
