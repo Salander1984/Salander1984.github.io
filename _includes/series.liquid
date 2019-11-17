@@ -2,11 +2,7 @@
 	<article class="post {{ post.class }}">
 		<header><h2><a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark">{{ post.title }}</a></h2></header>
 		<div class="content">
-			{% if post.ext == ".md" and post.content contains "<h2" %}
-				{{ post.content | replace_first: "<h2", "<section><h2" }}</section>
-			{% else %}
-				{{ post.excerpt }}
-			{% endif %}
+			{{ post.excerpt }}
 		</div>
 		<footer>
 			<div>
