@@ -81,9 +81,9 @@ Here is an example to use _builder()_ to create a stream whose elements are _Str
 Stream<String> stringStream = Stream.<String>builder().add("a").add("b").add("c").build();
 ```
 When _Stream.builder()_ is used, the desired type should be specified just before "builder()". Otherwise the builder 
-doesn't know which type the target stream wants, so it'll create an instance of the _Stream<Object>_.
+doesn't know which type the target stream wants, so it'll create an instance of the ```Stream<Object>```.
 ### _Stream.generate()_
-_Stream.generate()_ is used to create a infinity stream from a _Supplier<T>_, in reality it's no point to do so, so 
+_Stream.generate()_ is used to create a infinity stream from a ```Supplier<T>```, in reality it's no point to do so, so 
 we always use _limit()_ after calling _generate()_ to specify the size of stream. The following example creates a 
 stream contains 5 random _Integer_.
 ```java
@@ -106,7 +106,7 @@ Outputs:
 9
 ```
 ### Primitive Stream
-Java 8 offers a possibility to create streams out of three primitive types: int, long and double. As _Stream<T>_ is a 
+Java 8 offers a possibility to create streams out of three primitive types: int, long and double. As ```Stream<T>``` is a 
 generic interface and there is no way to use primitives as a type parameter with generics, three new special interfaces 
 were created: _IntStream_, _LongStream_, _DoubleStream_.<br/>
 Primitive Stream can be created by _Stream.of()_ or _Arrays.stream()_ from a primitive array.
@@ -116,8 +116,8 @@ IntStream intStream1 = IntStream.of(nums);
 IntStream intStream2 = Arrays.stream(nums);
 IntStream intStream3 = Arrays.stream(nums, 1, 3);
 ```
-The rules of creating a primitive stream from array is quite same as creating a _Stream<T>_ from array, only the type 
-of the result stream is _IntStream_(or _LongStream_ or _DoubleStream_) instead of _Stream<T>_.
+The rules of creating a primitive stream from array is quite same as creating a ```Stream<T>``` from array, only the type 
+of the result stream is _IntStream_(or _LongStream_ or _DoubleStream_) instead of ```Stream<T>```.
 
 If you want to create a primitive stream without any sources, try _range(int startInclusive, int endExclusive)_ or
 _rangeClosed(int startInclusive, int endExclusive)_.
@@ -176,7 +176,7 @@ b
 c
 ```
 **Filtering**<br/>
-As its name tells, we use _filter(Predicate<? super T> predicate)_ to filter out the elements that don't match the given 
+As its name tells, we use ```filter(Predicate<? super T> predicate)``` to filter out the elements that don't match the given 
 predicate. Usually, the result is a smaller size stream than original one.
 ```java
 Stream.of(1,2,3,4).filter(num -> num<=3).forEach(System.out::println);
@@ -203,7 +203,7 @@ Outputs of the above example should be:
 2
 3
 ```
-Except for non-parameter sort, there is another _sorted(Comparator<? super T> comparator)_ that returns a stream 
+Except for non-parameter sort, there is another ```sorted(Comparator<? super T> comparator)``` that returns a stream 
 consisting of the elements of this stream, sorted according to the provided _Comparator_.
 ```java
 Stream.of(2, 1, 3).sorted(Comparator.reverseOrder()).forEach(System.out::println);
@@ -247,11 +247,11 @@ c
 We will talk it later in [Stream Pipeline](#stream-pipeline).
 ### Terminal Operation
 **Matching**<br/>
-_allMatch(Predicate<? super T> predicate)_: When all elements of this stream match the provided predicate returns 
+```allMatch(Predicate<? super T> predicate)```: When all elements of this stream match the provided predicate returns 
 true, otherwise returns false.<br/>
- _anyMatch(Predicate<? super T> predicate)_: When any elements of this stream match the provided predicate returns 
+```anyMatch(Predicate<? super T> predicate)```: When any elements of this stream match the provided predicate returns 
  true, otherwise returns false.<br/>
-_noneMatch(Predicate<? super T> predicate)_: When no elements of this stream match the provided predicate returns 
+```noneMatch(Predicate<? super T> predicate)```: When no elements of this stream match the provided predicate returns 
 true, otherwise returns false.<br/>
 Example:
 ```java
@@ -285,10 +285,10 @@ By the way, you can also provide a comparator to _max()_ and _min()_.
 
 **Reduction**<br/>
 There are 3 _reduce()_ methods depending on their different parameters.<br/>
-_reduce(BinaryOperator<T> accumulator)_ performs a reduction on the elements of this stream, using an associative 
+```reduce(BinaryOperator<T> accumulator)``` performs a reduction on the elements of this stream, using an associative 
 accumulation function, and returns an Optional describing the reduced value, if any.<br/>
-_reduce(T identity, BinaryOperator<T> accumulator)_ uses the identity as the first operand of accumulation function.<br/>
-_reduce(U identity, BiFunction<U,? super T,U> accumulator, BinaryOperator<U> combiner)_ is used only in parallel mode. 
+```reduce(T identity, BinaryOperator<T> accumulator)``` uses the identity as the first operand of accumulation function.<br/>
+```reduce(V identity, BiFunction<V,? super T,V> accumulator, BinaryOperator<V> combiner)``` is used only in parallel mode. 
 It works like performing the accumulation function with the identity on every element of stream in a parallel way, then 
 using combining function to combine all the results returned from the accumulation function.<br/>
 Here is an example:
@@ -301,8 +301,8 @@ int result3 = Stream.of(1, 2, 3).parallel().reduce(4, Integer::sum, Integer::sum
 ```
 **Collecting**<br/>
 Actually _collect()_ method also performs reduction operation on the elements of the stream but returns a collection 
-instead of a particular value. _collect()_ takes parameters that can be _(Collector<? super T,A,R> collector)_ or 
-_(Supplier<R> supplier, BiConsumer<R,? super T> accumulator, BiConsumer<R,R> combiner)_.<br/>
+instead of a particular value. _collect()_ takes parameters that can be ```(Collector<? super T,A,R> collector)``` or 
+```(Supplier<R> supplier, BiConsumer<R,? super T> accumulator, BiConsumer<R,R> combiner)```.<br/>
 We use _collect()_ to transform a stream to a collection all the time:
 ```java
 Stream<String> stringStream = Stream.of("a", "b", "c");
