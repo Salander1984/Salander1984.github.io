@@ -6,6 +6,7 @@ tags: Basic Java8 Stream
 excerpt_separator: <!--more-->
 ---
 This article is an introduction of Java Stream API.
+<!--more-->
 ## Creation
 There are so many methods to create a stream, most common way is to create from a collection or an array with the help 
 of _stream()_ and _of()_. You can also use _builder()_, _generate()_ or _iterate()_ to create a stream under the 
@@ -15,7 +16,6 @@ Empty stream is often used to avoid returning _null_, you can create an empty st
 ```java
 Stream<String> streamEmpty = Stream.empty();
 ```
-<!--more-->
 ### Create From Values
 ```java
 Stream<String> stringStream = Stream.of("a", "b", "c");
